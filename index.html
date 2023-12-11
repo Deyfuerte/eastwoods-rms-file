@@ -8,18 +8,25 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-
 <body>
     <div class="container">
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="#">
-                        <span class="icon">
-                            <ion-icon name="book-outline"></ion-icon>
-                        </span>
-                        <span class="title">Eastwoods Research Hub</span>
-                    </a>
+                    <div class="profile-sidebar">
+                        <div class="profile-userpic">
+                            <img src="admin-img.png" class="img-responsive" alt="User Profile Picture">
+                        </div>
+                        <div class="profile-usertitle">
+                            <div class="profile-usertitle-name" id="userName">Administration</div>
+                            <a href="#">Edit</a>
+                        </div>
+                        <div class="clear"></div>
+                        
+                        <div class="edit-option" id="editOption" style="display: none;">
+                            <button class="edit-button" onclick="openEditPage()">Edit Profile</button>
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <a href="">
@@ -67,7 +74,9 @@
                 <div class="toggle">
                     <ion-icon name="menu-outline"></ion-icon>
                 </div>
-                <h1>Eastwoods Research Hub</h1>
+                <h1>Eastwoods Research Hub
+                    <p align="center">Empowering Discovery, Fueling Innovation:<br>Your Gateway to Limitless Knowledge at<br>Eastwoods Research Hub.</p>
+                </h1>
 
                 <div class="search">
                     <label>
