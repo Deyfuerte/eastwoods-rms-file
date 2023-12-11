@@ -36,6 +36,47 @@ body {
   transition: 0.5s;
   overflow: hidden;
 }
+.profile-sidebar {
+  align-items: center;
+  width: 200px;
+  color: #ffffff;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.profile-userpic img {
+  align-self: center;
+  width: 30%;
+  border-radius: 50%;
+}
+
+.profile-usertitle a {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-usertitle-name {
+  font-size: 12x;
+  font-weight: bold;
+}
+
+.profile-usertitle-status {
+  margin-top: 5px;
+}
+
+.edit-option {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.edit-button {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 .navigation.active {
   width: 80px;
 }
@@ -130,6 +171,7 @@ body {
 
 /* ===================== Main ===================== */
 .main {
+
   position: absolute;
   width: calc(100% - 300px);
   left: 300px;
@@ -143,12 +185,33 @@ body {
 }
 
 .topbar {
+  text-align: center;
+  color:#0d7257;
+  background-image: url("../imgs/dashboard-img.png");
+  background-size: cover;
+  opacity: 0.9;
   width: 100%;
-  height: 60px;
+  height: 280px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
   padding: 0 10px;
+}
+
+.topbar h1 {
+  padding-top: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #033d47ff;
+}
+
+.topbar p {
+  text-align: center;
+  padding-top: 45px;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 25px !important;
+  color: #e6ffd1ff;
 }
 
 .toggle {
@@ -163,6 +226,7 @@ body {
 }
 
 .search {
+  padding-top: 10px;
   position: relative;
   width: 250px;
   margin: 0 10px;
@@ -212,6 +276,7 @@ body {
 /* ======================= Dashboard ====================== */
 
 .cardBox {
+  margin-top: 20px;
   position: relative;
   width: 100%;
   padding: 40px;
