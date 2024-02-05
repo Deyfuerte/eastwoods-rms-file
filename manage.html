@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/assets/css/manage.css">
+    <script src="https://kit.fontawesome.com/02e0ade3c2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <div class="profile-sidebar">
+                        <div class="profile-userpic">
+                            <img src="admin-img.png" class="img-responsive" alt="Admin Profile Picture">
+                        </div>
+                        <div class="profile-usertitle">
+                            <div class="profile-usertitle-name" id="userName">Administration</div>
+                            <div class="edit">
+                                <a href="#">Edit Profile</a>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="edit-option" id="editOption" style="display: none;">
+                            <button class="edit-button" onclick="openEditPage()">Edit Profile</button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="cloud-upload-outline"></ion-icon>
+                        </span>
+                        <span class="title">Manage Research</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <ion-icon name="settings-outline"></ion-icon>
+                        </span>
+                        <span class="title">Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="signout-button">
+                <button class="sign-out-button">Sign out</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <h1>Eastwoods Research Hub
+                    <p align="center">Empowering Discovery, Fueling Innovation:<br>Your Gateway to Limitless Knowledge at<br>Eastwoods Research Hub.</p>
+                </h1>
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here...">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Upload Research Paper -->
+            <div class="re-management">
+                Upload Research Paper
+            </div>
+            <div class="container-2">
+                <div class="rms-details">
+                    Research Details:
+                    <div class="upload">
+                        <label class="button button2" for="fileInput">Upload PDF</label>
+                        <input type="file" id="fileInput" style="display:none" onchange="displayFileName()">
+                    </div>
+                </div>
+                <div class="labels">
+                    <form action="/submit_form" method="POST">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" required>
+
+                        <label for="author">Author:</label>
+                        <input type="text" id="author" name="author" required>
+
+                        <label for="abstract">Abstract:</label>
+                        <textarea id="abstract" name="abstract" rows="4" required></textarea>
+
+                        <label for="adviser">Adviser:</label>
+                        <input type="text" id="adviser" name="adviser" required>
+
+                        <div class="inline-group">
+                            <div class="input-group">
+                                <label for="program">Program:</label>
+                                <input type="text" id="program" name="program" required>
+                            </div>
+
+                            <div class="input-group">
+                                <label for="year">Year:</label>
+                                <input type="number" id="year" name="year" min="1900" max="2099" required>
+                            </div>
+
+                            <div id="sub-mit">
+                                <button type="submit" class="submit-button">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Manage Research Paper -->
+            <div class="re-management">
+                Manage Research Paper
+            </div>
+            <div class="container-3">
+                <div class="dropdown" id="dropdown">
+                    <button class="dropdown-button" id="selectedCategory">Select Category</button>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="selectCategory('#')">Computer Science</a>
+                        <a href="#" onclick="selectCategory('#')">Information Technology</a>
+                        <a href="#" onclick="selectCategory('#')">Computer Engineering</a>
+                        <a href="#" onclick="selectCategory('#')">Hospitality Management</a>
+                        <a href="#" onclick="selectCategory('#')">Hotel and Restaurant Technology</a>
+                    </div>
+                </div>
+                <input type="text-bar" class="search-bar" placeholder="Search...">
+                <button class="search-button">Search</button>
+            </div>
+            <div class="container-4">
+                <table>
+                    <tbody>
+                      <tr class="mso-yfti-irow-0">
+                        <td class="width-384 text-align-center" valign="top">
+                          <p class="MsoNormal researcher-header">RESEARCH TITLES</p>
+                        </td>
+                        <td class="width-267 border-left-none" colspan="3" valign="top">
+                          <p class="MsoNormal action-header">ACTION</p>
+                        </td>
+                      </tr>
+                      <tr class="mso-yfti-irow-1">
+                        <td class="width-384 border-top-none" valign="top">
+                          <p class="MsoNormal">1. Enhancing Cybersecurity through Machine Learning-based Anomaly Detection</p>
+                        </td>
+                        <td class="width-96 border-top-none border-left-none border-bottom-solid border-right-solid" valign="top">
+                            <i class="fa-solid fa-eye fa-xl" style="color: #FFD43B ;"></i>
+                        </td>
+                        <td class="width-96 border-top-none border-left-none border-bottom-solid border-right-solid" valign="top">
+                            <i class="fa-solid fa-pen-to-square fa-xl" style="color: #74C0FC;"></i>
+                        </td>
+                        <td class="width-75 border-top-none border-left-none border-bottom-solid border-right-solid" valign="top">
+                            <i class="fa-solid fa-trash fa-xl" style="color: #ca1616;"></i>
+                        </td>
+                      </tr>
+                      <tr class="mso-yfti-irow-2">
+                        <td class="width-384 border-top-none" valign="top">
+                          <p class="MsoNormal">2. Optimizing Resource Allocation in Cloud Computing Environments</p>
+                        </td>
+                        <td class="width-96 border-top-none border-left-none border-bottom-solid border-right-solid" valign="top">
+                            <i id="iconfa"class="fa-solid fa-eye fa-xl " style="color: #FFD43B ;"></i>
+                        </td>
+                        <td class="width-96 border-top-none border-left-none border-bottom-solid border-right-solid" valign="top">
+                            <i class="fa-solid fa-pen-to-square fa-xl" style="color: #74C0FC;"></i>
+                        </td>
+                        <td class="width-75 border-top-none border-left-none border-bottom-solid border-right-solid" valign="top">
+                            <i class="fa-solid fa-trash fa-xl" style="color: #ca1616;"></i>
+                        </td>
+                      </tr>
+                      <tr class="mso-yfti-irow-3 mso-yfti-lastrow-yes">
+                        <td class="width-384 border-top-none" valign="top">
+                          <p class="MsoNormal">3. Comparative Analysis of Blockchain Consensus Algorithms for Decentralized Applications</p>
+                        </td>
+                        <td class="width-96 border-top-none border-left-none border-bottom-solid border-right-solid" valign="top">
+                            <i class="fa-solid fa-eye fa-xl " style="color: #FFD43B ;"></i>
+                        </td>
+                        <td class="width-96 border-top-none border-left-none border-bottom-solid border-right-solid" valign="top">
+                            <i class="fa-solid fa-pen-to-square fa-xl" style="color: #74C0FC;"></i>
+                        </td>
+                        <td class="width-75 border-top-none border-left-none border-bottom-solid border-right-solid" valign="top">
+                            <i class="fa-solid fa-trash fa-xl" style="color: #ca1616;"></i>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="assets/js/main.js"></script>
+        <!-- ionicons -->
+        <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </div>
+</body>
+
+</html>
